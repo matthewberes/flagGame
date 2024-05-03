@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { GameChoiceBoxComponent } from './game-choice-box/game-choice-box.component';
-import { GameFlagBoxComponent } from './game-flag-box/game-flag-box.component';
-import { GameFooterComponent } from './game-footer/game-footer.component';
-import { GameHeaderComponent } from './game-header/game-header.component';
-import { GameScoreBoxComponent } from './game-score-box/game-score-box.component';
+import { HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, GameHeaderComponent, GameFlagBoxComponent, GameChoiceBoxComponent, GameScoreBoxComponent, GameFooterComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [HomeComponent,],
+  template: `  <main>
+  <header class="brand-name">
+    <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
+  </header>
+  <section class="content">
+    <app-home></app-home>
+  </section>
+</main>`,
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'flagGame';
