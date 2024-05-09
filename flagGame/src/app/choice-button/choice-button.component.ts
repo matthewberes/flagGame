@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MainServiceService } from '../main-service.service';
 
 @Component({
   selector: 'app-choice-button',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './choice-button.component.css'
 })
 export class ChoiceButtonComponent {
+
+  constructor(public ms: MainServiceService) { }
 
 }
