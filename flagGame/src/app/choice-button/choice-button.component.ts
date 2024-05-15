@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MainServiceService } from '../main-service.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { MainServiceService } from '../main-service.service';
   styleUrl: './choice-button.component.css'
 })
 export class ChoiceButtonComponent {
-
+  @Input() value!: string
   constructor(public ms: MainServiceService) { }
 
 }
