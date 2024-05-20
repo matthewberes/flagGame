@@ -12,4 +12,13 @@ export class ChoiceButtonComponent {
   @Input() value!: string
   constructor(public ms: MainServiceService) { }
 
+  clickButton() {
+    if (this.value == this.ms.currCountry) {
+      console.log("true")
+    } else {
+      console.log("false")
+    }
+    this.ms.newFlag();
+  }
+
 }

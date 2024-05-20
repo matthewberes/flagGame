@@ -15,6 +15,12 @@ export class ChoiceBoxComponent implements OnInit {
 
   ngOnInit(): void {
     this.options = this.shuffleArray(this.ms.randomNumbers.value)
+
+    this.ms.randomNumbers.subscribe(resp => {
+      if (this.ms.checkIfRandom(resp)) {
+        this.options = this.shuffleArray(resp)
+      }
+    })
   }
 
   shuffleArray(arr: number[]) {
